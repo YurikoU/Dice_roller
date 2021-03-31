@@ -17,6 +17,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace In_class_Assignment2
 {
     public partial class Form1 : Form
@@ -30,28 +31,31 @@ namespace In_class_Assignment2
             InitializeComponent();
         }
 
+
         private void buttonRollADice_Click(object sender, EventArgs e)
         {
-            Timer timer = new Timer();
-            timer.Interval = 1000;
-
             if (!diceIsRolling)
-            {
+            {  
+                //If the dice pauses
                 diceIsRolling = true;
-                timer.Enabled = true;
-
-                while (timer.Enabled == true)
-                { 
-                    buttonRollADice.Text = "Rolling it !!";
-                    label1.Text = Convert.ToString(random.Next(1, 7));
-                }
+                timer1.Enabled = true;
+                buttonRollADice.Text = "Rolling it !!";
             }
-                else
+            else 
             {
+                //If the dice is rolling
                 diceIsRolling = false;
-                timer.Enabled = false;
+                timer1.Enabled = false;
                 buttonRollADice.Text = "Roll-A-Dice";
             }
+        }
+
+
+        //Wile the timer property is enabled
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //Display a random number by 0.2 second
+            label1.Text = Convert.ToString(random.Next(1, 7));
         }
     }
 }

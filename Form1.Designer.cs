@@ -29,8 +29,10 @@ namespace In_class_Assignment2
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonRollADice = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -53,6 +55,11 @@ namespace In_class_Assignment2
             this.buttonRollADice.UseVisualStyleBackColor = true;
             this.buttonRollADice.Click += new System.EventHandler(this.buttonRollADice_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 200;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -71,6 +78,7 @@ namespace In_class_Assignment2
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonRollADice;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
